@@ -1,0 +1,149 @@
+/* General */
+
+:root {
+
+  /* color */
+
+  --amethyst: #9D5CD0;
+  --black: #000;
+  --dustyGray: #999;
+  --heliotrope: #C283F3;
+  --mineShaft: #333;
+  --royalPurple: #7943A4;
+  --silver: #cacaca;
+  --white: #fff;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  min-width: 320px;
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-weight: 400;
+}
+
+h2,
+h3 {
+  font-weight: inherit;
+}
+
+picture {
+  line-height: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+.container {
+  min-width: 290px;
+  max-width: 1700px;
+  margin: 0 auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.button {
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: normal;
+}
+
+.title {
+  margin: 0;
+  font-size: 48px;
+  line-height: normal;
+  color: var(--mineShaft);
+}
+
+.text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 32px;
+  color: var(--mineShaft);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  list-style: none;
+}
+
+.button-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+
+/* main */
+
+.table__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  max-width: 1600px;
+}
+
+.table__row:nth-child(even) .table__col:not(:first-of-type) {
+  background-color: #9ACEEB;
+  color: black;
+}
+
+.table__col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+  border: 1px solid black;
+}
+
+.table__col_main {
+  font-weight: 700;
+  background-color: #DCDCDC;
+  color: black;
+}

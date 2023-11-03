@@ -1,0 +1,15 @@
+/* gallery */
+
+@keyframes transform-x {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+}
+
+.gallery__anim-transform-x {
+  animation: transform-x 1s alternate ease-in-out 2 forwards;
+}

@@ -1,0 +1,25 @@
+/* header */
+
+.nav-link_active {
+  color: #000;
+}
+
+
+
+/* main */
+
+.main {
+  margin-bottom: 30px;
+}
+
+
+
+/* footer */
+
+.descr {
+  color: #0000FF;
+}
+
+.time {
+  color: red;
+}
