@@ -32,7 +32,7 @@
     descr.classList.add('descr');
 
     descr.textContent = "Page load time in JavaScript";
-    descrTime.innerHTML = `Page load time is <span class="time">${timeLoad}</span> Seconds`;
+    descrTime.innerHTML = `Page load time is <strong class="time">${ timeLoad / 1000 }</strong> Second(s)`;
 
     footer.append(descr);
     footer.append(descrTime);

@@ -80,7 +80,7 @@
               setImageSRC(pictureList, RESTR.imagePathListType21);
               break;
           }
-        }, 1000);
+        }, 1500);
 
         setTimeout(() => {
 

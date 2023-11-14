@@ -4,14 +4,7 @@
 
   /* color */
 
-  --amethyst: #9D5CD0;
-  --black: #000;
-  --dustyGray: #999;
-  --heliotrope: #C283F3;
-  --mineShaft: #333;
-  --royalPurple: #7943A4;
-  --silver: #cacaca;
-  --white: #fff;
+  --mineShaft: #999;
 }
 
 html {
@@ -44,6 +37,15 @@ body {
 h2,
 h3 {
   font-weight: inherit;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: center;
 }
 
 picture {
@@ -123,27 +125,47 @@ address {
 
 /* main */
 
-.table__row {
+.hero {
+  padding: 20px 0;
+}
+
+.planets-table {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  max-width: 1600px;
+  grid-template-columns: 1fr;
+  max-width: 100%;
 }
 
-.table__row:nth-child(even) .table__col:not(:first-of-type) {
-  background-color: #9ACEEB;
-  color: black;
+.planets-table__caption {
+  border: 1px solid #1B5583;
+  border-bottom: none;
+  padding: 10px 0;
+  background-color: #ADD8E6;
+  color: #082567;
 }
 
-.table__col {
-  display: flex;
+.planets-table__row {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(150px, 1fr));
+  max-width: 100%;
+}
+
+.planets-table__row .planets-table__col:nth-child(1) {
+  font-weight: 600;
+  background-color: #999;
+}
+
+.planets-table__body .planets-table__row:nth-child(odd) .planets-table__col:not(:first-of-type) {
+  background-color: #7FC7FF;
+}
+
+.planets-table__col_header {
+  font-weight: 600;
+  background-color: #999;
+}
+
+.planets-table__col {
   justify-content: center;
   align-items: center;
-  min-height: 50px;
   border: 1px solid black;
-}
-
-.table__col_main {
-  font-weight: 700;
-  background-color: #DCDCDC;
-  color: black;
+  padding: 10px;
 }
