@@ -1,0 +1,215 @@
+/* General */
+
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans Light'), local('OpenSans-Light'), local('OpenSansLight'),
+    url('../fonts/OpenSans-Light.woff2') format('woff2'),
+    url('../fonts/OpenSans-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), local('OpenSansRegular'),
+    url('../../fonts/OpenSans-Regular.woff2') format('woff2'),
+    url('../../fonts/OpenSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), local('OpenSansSemiBold'),
+    url('../../fonts/OpenSans-SemiBold.woff2') format('woff2'),
+    url('../../fonts/OpenSans-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), local('OpenSansBold'),
+    url('../../fonts/OpenSans-Bold.woff2') format('woff2'),
+    url('../../fonts/OpenSans-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'), local('OpenSansExtraBold'),
+    url('../../fonts/OpenSans-ExtraBold.woff2') format('woff2'),
+    url('../../fonts/OpenSans-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+
+  /* color */
+
+  --amethyst: #9D5CD0;
+  --black: #000;
+  --dustyGray: #999;
+  --heliotrope: #C283F3;
+  --mineShaft: #333;
+  --royalPurple: #7943A4;
+  --silver: #cacaca;
+  --white: #fff;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  min-width: 320px;
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-weight: 400;
+}
+
+h2,
+h3 {
+  font-weight: inherit;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: center;
+}
+
+picture {
+  line-height: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+.container {
+  min-width: 290px;
+  max-width: 1700px;
+  margin: 0 auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.button {
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: normal;
+}
+
+.title {
+  margin: 0;
+  font-size: 48px;
+  line-height: normal;
+  color: var(--mineShaft);
+}
+
+.text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 32px;
+  color: var(--mineShaft);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  list-style: none;
+}
+
+.button-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+
+/* header */
+
+
+
+/* main */
+
+/* client-panel */
+
+.client-panel {
+  padding: 30px 0;
+}
+
+.manage-table__caption {
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.manage-table__col {
+  border: 1px solid var(--mineShaft);
+  padding: 10px;
+}
+
+.error {
+  padding-top: 10px;
+  padding-left: 50px;
+  font-weight: 700;
+  font-size: 30px;
+  background: transparent url('../../img/attention.png') no-repeat left center;
+}
+
+
+
+/* footer */

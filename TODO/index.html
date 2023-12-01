@@ -5,27 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>TODO</title>
+  <script src="js/main.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
-  <script defer src="js/main.js"></script>
   <script defer src="js/todo-app.js"></script>
-  <script>
-
-    const timerStart = Date.now();
-    document.addEventListener('DOMContentLoaded', function () {
-
-      main(timerStart);
-      createTodoApp(document.getElementById('todo-app'), 'Мои дела', 'myFormDate');
-    });
-  </script>
 </head>
 
 <body>
   <header class="header container mb-5">
     <div>
       <nav class="nav">
-        <a href="index.html" class="nav-link nav-link_main">Мои дела</a>
+        <a href="index.html" class="nav-link nav-link_index">Мои дела</a>
         <a href="dad.html" class="nav-link nav-link_dad">Дела папы</a>
         <a href="mom.html" class="nav-link nav-link_mom">Дела мамы</a>
       </nav>
@@ -33,7 +24,56 @@
   </header>
 
   <main class="main container">
-    <div id="todo-app"></div>
+    <div id="todo-app-index"></div>
+    <section class="main-box">
+      <h1 class="main-box__title">Какой-то текст</h1>
+      <p class="main-box__paragraph">
+        H<sub>2</sub>O, m<sup>3</sup>
+      </p>
+
+      <p class="main-box__paragraph">
+        Для приготовления этого блюда нужны овощи <del>средней</del> <ins>легкой</ins> прожарки.
+        <em>Просто сделай это!</em>
+      </p>
+
+      <p class="main-box__paragraph main-box__paragraph_vis">
+        Never gonna give you up. Never gonna let you down. Never gonna run around and desert you.
+        Never gonna make you cry. Never gonna say goodbye. Never gonna tell a lie and hurt you.
+      </p>
+
+      <blockquote cite="https://www.sports.ru/tribuna/blogs/playercareer/1304308.html" class="main-box__blockquote">
+        <p class="main-box__paragraph">
+          "Я ушел влево, и он тоже. Потом я ушел вправо, и он тоже. Потом я опять ушел влево, а он пошел купить себе
+          хот-дог."
+        </p>
+
+        <p class="main-box__paragraph">
+          "Даже травмированный Златан - усиление для любой команды!"
+        </p>
+
+        <cite class="main-box__cite">Златан Ибрагимович</cite>
+      </blockquote>
+    </section>
+
+    <section class="complementary-box">
+      <h2 class="complementary-box__title">Список знаменитых певцов по году рождения</h2>
+      <ol class="complementary-box__list">
+        <li class="complementary-box__item">Freddie Mercury</li>
+        <li class="complementary-box__item">Michael Jackson</li>
+        <li class="complementary-box__item">Adele</li>
+      </ol>
+    </section>
+
+    <template class="template-form">
+      <form class="input-group mb-3">
+        <input class="form-control" placeholder="Введите название нового дела">
+        <div class="input-group-append">
+          <button class="btn btn-primary" disabled>
+            Добавить дело
+          </button>
+        </div>
+      </form>
+    </template>
   </main>
 
   <footer class="footer container"></footer>

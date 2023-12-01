@@ -131,11 +131,12 @@ address {
 
 .planets-table {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(6, minmax(150px, 1fr));
   max-width: 100%;
 }
 
 .planets-table__caption {
+  grid-column: 1 / 7;
   border: 1px solid #1B5583;
   border-bottom: none;
   padding: 10px 0;
@@ -143,10 +144,11 @@ address {
   color: #082567;
 }
 
-.planets-table__row {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(150px, 1fr));
-  max-width: 100%;
+.planets-table__head,
+.planets-table__body,
+.planets-table__row
+{
+  display: contents;
 }
 
 .planets-table__row .planets-table__col:nth-child(1) {

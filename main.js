@@ -3,6 +3,39 @@
   function generalSettings() {
 
     configureAnimation();
+    setupPanel();
+  }
+
+  function setupPanel() {
+
+    const form = document.querySelector('.form-tel');
+    form.addEventListener('submit', (ev) => {
+
+      ev.preventDefault();
+
+      const user = {
+        name: getObject(".form-tel__input[name='personalData']").value.trip(),
+        tel: getObject(".form-tel__input[name='phone']").value.trip()
+      }
+
+      addToDb(user);
+    });
+  }
+
+  function getObject(selector) {
+
+    return document.querySelector(selector);
+  }
+
+  function addToDb(user) {
+
+    fetch('https://jsonplaceholder.typicode.com/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    });
   }
 
   function configureAnimation() {
@@ -109,5 +142,8 @@
     }
   }
 
-  window.generalSettings = generalSettings;
+  document.addEventListener('DOMContentLoaded', () => {
+
+    generalSettings();
+  });
 })();

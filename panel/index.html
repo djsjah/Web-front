@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Панель управления клиентами</title>
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="anim/anim.css">
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <div class="preloader">
+    <div class="preloader__row">
+      <div class="preloader__item"></div>
+      <div class="preloader__item"></div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container">
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <section class="client-panel">
+        <div class="client-panel__wrapper">
+          <table class="client-panel__table manage-table">
+            <caption class="manage-table__caption">
+              Таблица управления клиентами
+            </caption>
+
+            <thead class="manage-table__head">
+              <tr class="manage-table__row">
+                <th class="manage-table__col manage-table__col_main manage-table__col_main_id">
+                  Id
+                </th>
+
+                <th class="manage-table__col manage-table__col_main manage-table__col_main_name">
+                  Имя
+                </th>
+
+                <th class="manage-table__col manage-table__col_main manage-table__col_main_username">
+                  Имя пользователя
+                </th>
+
+                <th class="manage-table__col manage-table__col_main manage-table__col_main_email">
+                  Почта
+                </th>
+
+                <th class="manage-table__col manage-table__col_main manage-table__col_main_phone">
+                  Номер телефона
+                </th>
+
+                <th class="manage-table__col manage-table__col_main manage-table__col_main_city">
+                  Город
+                </th>
+
+                <th class="manage-table__col manage-table__col_main manage-table__col_main_website">
+                  Веб-сайт
+                </th>
+
+                <th class="manage-table__col manage-table__col_main manage-table__col_main_company">
+                  Компания
+                </th>
+              </tr>
+            </thead>
+
+            <tbody class="manage-table__body">
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <template class="table-template">
+      <tr class="manage-table__row">
+        <td class="manage-table__col manage-table__col_id">
+        </td>
+
+        <td class="manage-table__col manage-table__col_name">
+        </td>
+
+        <td class="manage-table__col manage-table__col_username">
+        </td>
+
+        <td class="manage-table__col manage-table__col_email">
+        </td>
+
+        <td class="manage-table__col manage-table__col_phone">
+        </td>
+
+        <td class="manage-table__col manage-table__col_city">
+        </td>
+
+        <td class="manage-table__col manage-table__col_website">
+        </td>
+
+        <td class="manage-table__col manage-table__col_company">
+        </td>
+      </tr>
+    </template>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+    </div>
+  </footer>
+</body>
+
+</html>
