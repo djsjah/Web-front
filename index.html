@@ -25,6 +25,14 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="anim/anim.css">
   <link rel="stylesheet" href="css/media.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0/animate.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="node_modules/jcslider/jquery.jcslider.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.jc-slider').jcSlider();
+    });
+  </script>
   <script src="main.js" defer></script>
 </head>
 
@@ -112,23 +120,53 @@
 
     <section id="company" class="company">
       <div class="container">
-        <div class="company__content">
+        <div class="company__wrapper flex">
 
-          <h2 class="company__title title">О&nbsp;нас</h2>
-          <p class="company__paragraph text">
-            Ясность нашей позиции очевидна: семантический разбор внешних противодействий однозначно определяет каждого
-            участника как способного принимать собственные решения касаемо распределения внутренних резервов
-            и&nbsp;ресурсов.
-            Не&nbsp;следует, однако, забывать, что высококачественный прототип будущего проекта влечёт за&nbsp;собой
-            процесс внедрения и&nbsp;модернизации модели развития. Повседневная практика показывает, что высокое
-            качество
-            позиционных исследований создаёт необходимость включения в&nbsp;производственный план целого ряда
-            внеочередных
-            мероприятий с&nbsp;учётом комплекса распределения внутренних резервов и&nbsp;ресурсов. В&nbsp;рамках
-            спецификации современных стандартов, действия представителей оппозиции набирают популярность среди
-            определённых
-            слоёв населения, а&nbsp;значит, должны быть разоблачены.
-          </p>
+          <div class="company__content">
+            <h2 class="company__title title">О&nbsp;нас</h2>
+            <p class="company__paragraph text">
+              Ясность нашей позиции очевидна: семантический разбор внешних противодействий однозначно определяет каждого
+              участника как способного принимать собственные решения касаемо распределения внутренних резервов
+              и&nbsp;ресурсов.
+              Не&nbsp;следует, однако, забывать, что высококачественный прототип будущего проекта влечёт за&nbsp;собой
+              процесс внедрения и&nbsp;модернизации модели развития. Повседневная практика показывает, что высокое
+              качество
+              позиционных исследований создаёт необходимость включения в&nbsp;производственный план целого ряда
+              внеочередных
+              мероприятий с&nbsp;учётом комплекса распределения внутренних резервов и&nbsp;ресурсов. В&nbsp;рамках
+              спецификации современных стандартов, действия представителей оппозиции набирают популярность среди
+              определённых
+              слоёв населения, а&nbsp;значит, должны быть разоблачены.
+            </p>
+          </div>
+
+          <div class="main-gallery">
+            <ul class="jc-slider list-reset">
+              <li class="jc-animation">
+                <img src="img/main-gallery-image-1-1920.jpg" alt="Изображение из галереи">
+              </li>
+
+              <li class="jc-animation">
+                <img src="img/main-gallery-image-2-1920.jpg" alt="Изображение из галереи">
+              </li>
+
+              <li class="jc-animation">
+                <img src="img/main-gallery-image-3-1920.jpg" alt="Изображение из галереи">
+              </li>
+
+              <li class="jc-animation">
+                <img src="img/main-gallery-image-4-1920.jpg" alt="Изображение из галереи">
+              </li>
+
+              <li class="jc-animation">
+                <img src="img/main-gallery-image-5-1920.jpg" alt="Изображение из галереи">
+              </li>
+
+              <li class="jc-animation">
+                <img src="img/main-gallery-image-6-1920.jpg" alt="Изображение из галереи">
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>

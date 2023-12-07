@@ -19,28 +19,29 @@
 
   async function getFromDb() {
 
-    /*const test = await fetch(`https://jsonplaceholder.typicode.com/users/1`);
-
-    console.log(test);*/
-
     let data = null;
-    await fetch('https://jsonplaceholder.typicode.com/users')
-      .then(async (res) => {
+    const idLimit = getRandomInt(1, 10);
+    const pseFilter = setPseudorandomFilter(idLimit);
 
-        if (res.status < 200 || res.status >= 300) {
+    await fetch(`https://jsonplaceholder.typicode.com/users${pseFilter}`)
+      .then(async (response) => {
 
-          const error = document.createElement('div');
-          const wrapper = document.querySelector('.client-panel__wrapper');
+        if (response.ok) {
 
-          error.textContent = 'Что-то пошло не так';
-          error.classList.add('error');
-
-          wrapper.append(error);
+          data = await response.json();
         }
         else {
 
-          data = await res.json();
+          throw "Error";
         }
+      })
+      .catch(() => {
+
+        const errorTemplate = document.querySelector('.error-template');
+        const clone = errorTemplate.content.cloneNode(true);
+        const wrapper = document.querySelector('.client-panel__wrapper');
+
+        wrapper.append(clone);
       });
 
     return data;
@@ -48,68 +49,75 @@
 
   function fillPanel(data) {
 
-    const idLimit = getRandomInt(1, data.length);
     const table_headers = document.querySelectorAll('.manage-table__col_main');
     const tableBody = document.querySelector('.manage-table__body');
 
     for (let i = 0; i < data.length; i++) {
 
-      if (data[i]['id'] <= idLimit) {
+      const tableTemplate = document.querySelector('.table-template');
+      const clone = tableTemplate.content.cloneNode(true);
 
-        const tableTemplate = document.querySelector('.table-template');
-        const clone = tableTemplate.content.cloneNode(true);
+      tableBody.append(clone);
 
-        tableBody.append(clone);
+      const tableCol = tableBody.lastElementChild.children;
 
-        const tableCol = tableBody.lastElementChild.children;
+      for (let j = 0; j < table_headers.length; j++) {
 
-        for (let j = 0; j < table_headers.length; j++) {
+        switch (true) {
 
-          switch (true) {
+          case table_headers[j].classList.contains('manage-table__col_main_id'):
 
-            case table_headers[j].classList.contains('manage-table__col_main_id'):
+            setTableElem(tableCol[j], data[i], 'id');
+            break;
 
-              setTableElem(tableCol[j], data[i], 'id');
-              break;
+          case table_headers[j].classList.contains('manage-table__col_main_name'):
 
-            case table_headers[j].classList.contains('manage-table__col_main_name'):
+            setTableElem(tableCol[j], data[i], 'name');
+            break;
 
-              setTableElem(tableCol[j], data[i], 'name');
-              break;
+          case table_headers[j].classList.contains('manage-table__col_main_username'):
 
-            case table_headers[j].classList.contains('manage-table__col_main_username'):
+            setTableElem(tableCol[j], data[i], 'username');
+            break;
 
-              setTableElem(tableCol[j], data[i], 'username');
-              break;
+          case table_headers[j].classList.contains('manage-table__col_main_email'):
 
-            case table_headers[j].classList.contains('manage-table__col_main_email'):
+            setTableElem(tableCol[j], data[i], 'email');
+            break;
 
-              setTableElem(tableCol[j], data[i], 'email');
-              break;
+          case table_headers[j].classList.contains('manage-table__col_main_phone'):
 
-            case table_headers[j].classList.contains('manage-table__col_main_phone'):
+            setTableElem(tableCol[j], data[i], 'phone');
+            break;
 
-              setTableElem(tableCol[j], data[i], 'phone');
-              break;
+          case table_headers[j].classList.contains('manage-table__col_main_city'):
 
-            case table_headers[j].classList.contains('manage-table__col_main_city'):
+            setTableElem(tableCol[j], data[i]['address'], 'city');
+            break;
 
-              setTableElem(tableCol[j], data[i]['address'], 'city');
-              break;
+          case table_headers[j].classList.contains('manage-table__col_main_website'):
 
-            case table_headers[j].classList.contains('manage-table__col_main_website'):
+            setTableElem(tableCol[j], data[i], 'website');
+            break;
 
-              setTableElem(tableCol[j], data[i], 'website');
-              break;
+          case table_headers[j].classList.contains('manage-table__col_main_company'):
 
-            case table_headers[j].classList.contains('manage-table__col_main_company'):
-
-              setTableElem(tableCol[j], data[i]['company'], 'name');
-              break;
-          }
+            setTableElem(tableCol[j], data[i]['company'], 'name');
+            break;
         }
       }
     }
+  }
+
+  function setPseudorandomFilter(idLimit) {
+
+    let pseFilter = `?id=1`;
+    for (let i = 2; i <= idLimit; i++) {
+
+      pseFilter = [pseFilter, `&id=${i}`].join('');
+    }
+
+    return pseFilter;
   }
 
   function setTableElem(col, dataElem, param) {

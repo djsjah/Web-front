@@ -408,8 +408,13 @@ address {
   padding-bottom: 70px;
 }
 
+.company__wrapper {
+  align-items: center;
+  gap: 60px;
+}
+
 .company__content {
-  max-width: 1080px;
+  max-width: 900px;
 }
 
 .company__title {
