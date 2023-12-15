@@ -31,10 +31,15 @@
   <script src="jcSlider-master/jquery.jcslider.min.js"></script>
   <script src="jcSlider-master/jquery.jcslider.js"></script>
   <script type="text/javascript">
-    $(document).ready(function(){
-        $('.jc-slider').jcSlider();
+    $(document).ready(function () {
+      $('.jc-slider').jcSlider({
+        animationIn: "rotateInUpRight",
+        animationOut: "rotateOutUpLeft",
+        stopOnHover: false, // true by default
+        loop: true // true by default
+      });
     });
-</script>
+  </script>
 </head>
 
 <body>

@@ -15,6 +15,7 @@
       document.body.classList.add('loaded');
       document.body.classList.remove('loaded_hiding');
     }, 1000);
+    console.log(2);
   }
 
   async function getFromDb() {
@@ -24,11 +25,11 @@
     const pseFilter = setPseudorandomFilter(idLimit);
 
     await fetch(`https://jsonplaceholder.typicode.com/users${pseFilter}`)
-      .then(async (response) => {
+      .then((response) => {
 
         if (response.ok) {
 
-          data = await response.json();
+          data = response.json();
         }
         else {
 
