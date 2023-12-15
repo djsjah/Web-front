@@ -15,7 +15,6 @@
       document.body.classList.add('loaded');
       document.body.classList.remove('loaded_hiding');
     }, 1000);
-    console.log(2);
   }
 
   async function getFromDb() {
